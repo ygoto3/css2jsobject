@@ -1,0 +1,36 @@
+'use strict';
+
+const css = require('css');
+
+module.exports = function (source) {
+  const ast = css.parse(source);
+  const selectors = ast.stylesheet.rules.reduce(rules2selectors, {});
+  return selectors;
+}
+
+function rules2selectors(selectors, rule) {
+  if ( !isRule(rule) ) return selectors;
+  const styles = rule.declarations.reduce(declarations2styles, {});
+  return Object.assign( selectors, rule.selectors.reduce( createMapSelectors(styles), {} ) );
+}
+
+function declarations2styles(styles, declaration) {
+  if ( !isDeclaration(declaration) ) return styles;
+  styles[declaration.property] = declaration.value;
+  return styles;
+}
+
+function createMapSelectors(styles) {
+  return (selectors, selector) => {
+    selectors[selector] = styles;
+    return selectors;
+  };
+}
+
+function isRule(rule) {
+  return rule.type === 'rule';
+}
+
+function isDeclaration(declaration) {
+  return declaration.type === 'declaration';
+}
