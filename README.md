@@ -30,3 +30,22 @@ and below is the result.
   }
 }
 ```
+
+## Development
+
+### Requirements
+
+* Node.js v6.3.0~
+
+### Prepare for development
+
+```
+$ npm run init
+```
+
+### Run test
+
+
+```
+$ npm test
+```

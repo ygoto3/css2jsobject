@@ -4,6 +4,7 @@
   "description": "A simple converter from CSS to JavaScript object",
   "main": "src/index.js",
   "scripts": {
+    "init": "npm install",
     "test": "$(npm bin)/tape src/**/*.spec.js | $(npm bin)/tap-spec"
   },
   "repository": {
