@@ -31,11 +31,11 @@ and below is the result.
 }
 ```
 
-## Development
-
-### Requirements
+## Requirement
 
 * Node.js v6.3.0~
+
+## Development
 
 ### Prepare for development
 
