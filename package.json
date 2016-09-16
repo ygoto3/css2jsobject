@@ -1,6 +1,6 @@
 {
   "name": "css2jsobject",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple converter from CSS to JavaScript object",
   "main": "src/index.js",
   "scripts": {

@@ -14,6 +14,7 @@ const css2jsobject = require('css2jsobject');
 const css = `
   .list { background-color: #ff00ff; }
   #item { font-size: 10px; }
+  #item { box-sizing: border-box; }
 `;
 css2jsobject(css);
 ```
@@ -26,6 +27,7 @@ and below is the result.
     "background-color": "#ff00ff"
   },
   "#item": {
+    "box-sizing": "border-box",
     "font-size": "10px"
   }
 }
